@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>t
-</head>
-<body>
-    <header>
-        <div class = "menu-toogle">menu</div>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <script>
-        const menuToggle = document.querySelector('.menu-toogle')
-        const nav = document.querySelector('nav')
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Tarefas</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#task-list">Minha lista</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section id="home">
+                <h1>Sobre...</h1>
+                <p>Essa é uma aplicação web "to-do list", ou seja, uma lista de tarefas online.</p><br>
+                <p>Uma lista de tarefas é uma ferramenta simples e eficaz para organizar atividades que precisam ser realizadas em um determinado período. Consiste em um conjunto de itens organizados de forma sequencial ou categorizada, que ajuda as pessoas a acompanhar e priorizar suas responsabilidades.</p><br>
+                <h3>Para que serve uma lista de tarefas?</h3>
+                <p>O principal objetivo de uma lista de tarefas é aumentar a produtividade e facilitar o gerenciamento do tempo. Ela permite que as atividades sejam organizadas de maneira clara, ajudando a visualizar o que precisa ser feito e acompanhar o progresso ao longo do dia, semana ou projeto. Pode ser usada em contextos pessoais ou profissionais, como planejar o dia, organizar projetos, estudar ou gerenciar equipes em um ambiente de trabalho.</p><br>
+            </section>
 
-        menuToggle.addEventListener('click', () =>{
-            nav.classList.toggle('active')
-        });
-    </script>
-</body>
+            <section>
+                <h2>Lista de Tarefas</h2>
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Digite uma nova tarefa..." required>
+                    <button type="submit">Adicionar</button>
+                </form>
+            </section>
+            <section id="task-list">
+                <ul id="tasks"></ul>
+            </section>
+        </main>
+    
+        <script src="app.js"></script>
+    </body>
 </html>
